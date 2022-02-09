@@ -42,6 +42,12 @@ module.exports = {
       },
     ],
     "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        namedComponents: "arrow-function", //"function-declaration" | "function-expression" | "arrow-function"
+      },
+    ],
     "no-void": [
       "error",
       {
