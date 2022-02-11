@@ -27,14 +27,6 @@
     "operator-linebreak": "off",
     "implicit-arrow-linebreak": "off",
     "object-curly-newline": "off",
-    "react/jsx-curly-newline": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": [
-      "error",
-      {
-        "namedComponents": "arrow-function" //"function-declaration" | "function-expression" | "arrow-function"
-      }
-    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -49,27 +41,37 @@
     ],
     "import/no-default-export": "error",
     "import/prefer-default-export": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react/jsx-filename-extension": [
-      "error",
-      {
-        "extensions": [".ts", ".tsx"]
-      }
-    ],
-    "import/extensions": ["off"],
-    "react/self-closing-comp": [
-      "error",
-      {
-        "component": false,
-        "html": false
-      }
-    ],
-    // react-hooks with recoil
-    "react-hooks/exhaustive-deps": [
-      "warn",
-      {
-        "additionalHooks": "(useRecoilCallback|useRecoilTransaction_UNSTABLE)"
-      }
-    ]
-  }
+
+    "import/extensions": ["off"]
+  },
+  "react/jsx-curly-newline": "off",
+  "react/react-in-jsx-scope": "off",
+  "react/function-component-definition": [
+    "error",
+    {
+      "namedComponents": "arrow-function" //"function-declaration" | "function-expression" | "arrow-function"
+    }
+  ],
+  "react-hooks/rules-of-hooks": "error",
+  "react/self-closing-comp": [
+    "error",
+    {
+      "component": false,
+      "html": false
+    }
+  ],
+  // react-hooks with recoil
+  "react-hooks/exhaustive-deps": [
+    "warn",
+    {
+      "additionalHooks": "(useRecoilCallback|useRecoilTransaction_UNSTABLE)"
+    }
+  ],
+  "react/jsx-props-no-spreading": "off",
+  "react/jsx-filename-extension": [
+    "error",
+    {
+      "extensions": [".ts", ".tsx"]
+    }
+  ]
 }

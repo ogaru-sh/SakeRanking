@@ -16,3 +16,16 @@ export type CommunityStep =
   | 'player';
 
 export type HoleCard = string[];
+
+export interface Config {
+  sakeAPI: {
+    baseURL: string;
+    params: {
+      areas: string;
+      brands: string;
+      breweries: string;
+      rankings: string;
+      flavorCharts: string;
+    };
+  };
+}
