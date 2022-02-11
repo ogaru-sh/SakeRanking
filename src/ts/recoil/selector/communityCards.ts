@@ -2,7 +2,7 @@ import { selector } from 'recoil';
 import {
   communityCardsState,
   playersCardsState
-} from '@/components/recoil/atom/communityCards';
+} from '@/ts/recoil/atom/communityCards';
 
 export const selectedPoolCardsState = selector({
   key: 'selectedPoolCardsState',
