@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -18,7 +18,11 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { SakeImageList } from '@/components/organisms/sakeCell/SakeList';
-
+import { SakeRanking } from '@/ts/interfaces';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { sakeRankingState } from '@/ts/recoil/atom/communityCards';
+import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
+import { sakeRankingParamState } from '@/ts/recoil/atom/communityCards';
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -72,8 +76,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export const Home = () => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -81,10 +84,6 @@ export const Home = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  React.useEffect(() => {
-    console.log('');
-  });
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -152,8 +151,10 @@ export const Home = () => {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>
-          <SakeImageList />
+        <Typography component={'div'}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <SakeImageList />
+          </Suspense>
         </Typography>
       </Main>
     </Box>

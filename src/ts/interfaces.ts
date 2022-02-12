@@ -18,24 +18,25 @@ export interface ListItem {
 }
 
 export interface SakeRanking {
-  copyright: string;
-  yearMonth: string;
-  overall: {
-    rank: number;
-    score: number;
-    brandId: number;
-  }[];
-  area: {
-    areaId: number;
-    ranking: {
-      rank: number;
-      score: number;
-      brandId: number;
-    }[];
-  }[];
+  // copyright: string;
+  // yearMonth: string;
+  // overall: {
+  //   rank: number;
+  //   score: number;
+  //   brandId: number;
+  // }[];
+  // area: {
+  //   areaId: number;
+  //   ranking: {
+  //     rank: number;
+  //     score: number;
+  //     brandId: number;
+  //   }[];
+  // }[];
 }
 
 export interface FetchResult {
+  param: any;
   code: string;
   result: SakeRanking;
 }
