@@ -65,7 +65,7 @@ const itemData = [
   }
 ];
 
-export const TitlebarBelowImageList = () => {
+export const SakeImageList = () => {
   return (
     <ImageList sx={{ width: 500, height: 450 }}>
       {itemData.map((item) => (
