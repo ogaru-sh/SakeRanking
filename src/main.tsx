@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil';
 import './index.css';
 // import { App } from './components/page/Top/App';
 // import { PokerField } from './components/page/ScenarioCreate/PokerField';
-import { Home } from './components/Home';
+import { Home } from './components/pages/Home';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -29,3 +29,9 @@ export interface Config {
     };
   };
 }
+
+export interface ListItem {
+  img: string;
+  title: string;
+  author: string;
+}
