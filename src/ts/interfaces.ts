@@ -35,3 +35,21 @@ export interface ListItem {
   title: string;
   author: string;
 }
+
+export interface SakeRanking {
+  copyright: string;
+  yearMonth: string;
+  overall: {
+    rank: number;
+    score: number;
+    brandId: number;
+  }[];
+  area: {
+    areaId: number;
+    ranking: {
+      rank: number;
+      score: number;
+      brandId: number;
+    }[];
+  }[];
+}

@@ -1,8 +1,9 @@
 import { atom } from 'recoil';
-import { CommunityCards } from '@/ts/interfaces';
+import { CommunityCards, SakeRanking } from '@/ts/interfaces';
 
 const AtomKeys = {
-  COMMUNITY_CARDS_STATE: 'communityCardsState'
+  COMMUNITY_CARDS_STATE: 'communityCardsState',
+  SAKE_RANKING_STATE: 'sakeRankingState'
 } as const;
 
 export const communityCardsState = atom<CommunityCards>({
@@ -13,5 +14,15 @@ export const communityCardsState = atom<CommunityCards>({
     flop3: '',
     turn: '',
     river: ''
+  }
+});
+
+export const sakeRankingState = atom<SakeRanking>({
+  key: AtomKeys.SAKE_RANKING_STATE,
+  default: {
+    copyright: '',
+    yearMonth: '',
+    overall: [],
+    area: []
   }
 });
