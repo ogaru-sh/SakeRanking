@@ -64,12 +64,16 @@ const itemData = [
     author: '@southside_customs'
   }
 ];
+import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
 
 export const SakeImageList = () => {
+  const resoponse = useSakeRankigAPI('');
+  console.log('sakeRanking', resoponse);
+
   return (
     <ImageList sx={{ width: 500, height: 450 }}>
-      {itemData.map((item) => (
-        <SakeListItem item={item} />
+      {itemData.map((item, index) => (
+        <SakeListItem item={item} key={index} />
       ))}
     </ImageList>
   );

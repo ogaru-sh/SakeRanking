@@ -13,7 +13,7 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "newLine": "lf",
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
