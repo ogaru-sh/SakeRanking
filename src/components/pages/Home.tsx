@@ -18,11 +18,11 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { SakeImageList } from '@/components/organisms/sakeCell/SakeList';
-import { SakeRanking } from '@/ts/interfaces';
+import { SakeRanking } from '@/ts/modules/interfaces';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { sakeRankingState } from '@/ts/recoil/atom/communityCards';
+import { sakeRankingState } from '@/ts/recoil/atom/sakeRanking';
 import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
-import { sakeRankingParamState } from '@/ts/recoil/atom/communityCards';
+import { sakeRankingParamState } from '@/ts/recoil/atom/sakeRanking';
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -88,17 +88,8 @@ export const Home = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={true}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" noWrap component="div">
             Persistent drawer
           </Typography>
@@ -115,17 +106,9 @@ export const Home = () => {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={true}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
+        <DrawerHeader></DrawerHeader>
         <Divider />
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -151,11 +134,9 @@ export const Home = () => {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography component={'div'}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <SakeImageList />
-          </Suspense>
-        </Typography>
+        <Suspense fallback={<div>Loading...</div>}>
+          <SakeImageList />
+        </Suspense>
       </Main>
     </Box>
   );
