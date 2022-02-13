@@ -8,21 +8,13 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { SakeImageList } from '@/components/organisms/sakeCell/SakeList';
-import { SakeRanking } from '@/ts/modules/interfaces';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { sakeRankingState } from '@/ts/recoil/atom/sakeRanking';
-import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
-import { sakeRankingParamState } from '@/ts/recoil/atom/sakeRanking';
+
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -76,14 +68,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export const Home = () => {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -132,7 +116,7 @@ export const Home = () => {
           ))}
         </List>
       </Drawer>
-      <Main open={open}>
+      <Main open={true}>
         <DrawerHeader />
         <Suspense fallback={<div>Loading...</div>}>
           <SakeImageList />

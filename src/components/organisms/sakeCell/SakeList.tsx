@@ -2,6 +2,7 @@ import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/molecules/sakeCell/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
+import { SakeRanking } from '@/ts/modules/interfaces';
 
 const itemData = [
   {
@@ -67,7 +68,9 @@ const itemData = [
 ];
 
 export const SakeImageList = () => {
-  const sakeRankingResult = useRecoilValue(sakeRankingSelector(''));
+  const sakeRankingResult: SakeRanking | null = useRecoilValue(
+    sakeRankingSelector('')
+  );
   console.log('sakeRanking', sakeRankingResult);
   return (
     <ImageList sx={{ width: 500, height: 450 }}>
