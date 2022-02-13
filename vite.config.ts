@@ -8,11 +8,20 @@ import { resolve } from "path";
 export default defineConfig({
   server: {
     open: true,
+    proxy: {'/api/ranking': {
+      target: 'https://sakenowa.com',
+      changeOrigin: true,
+      secure: false,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      rewrite: (path) => path.replace(/^\/api\/ranking/, '/api/v2/brands/ranking')
+    }
+  }
   },
   base: './',
   root: './src/',
   build: {
-    // root (= ./src) から見た相対パスで指定
     outDir: '../public',
     emptyOutDir: true,
   },
