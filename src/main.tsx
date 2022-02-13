@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
 import './index.css';
-// import { App } from './components/page/Top/App';
+import { App } from './App';
 // import { PokerField } from './components/page/ScenarioCreate/PokerField';
-import { Home } from './components/pages/Home';
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <Home />
+      <App />
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')

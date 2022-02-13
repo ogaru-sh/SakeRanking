@@ -15,16 +15,25 @@ export const sakeRankingSelector = selector({
     if (sakeRanking) {
       return sakeRanking;
     } else {
-      const endPoint = `https://sakenowa.com/api/v2/brands/ranking?${sakeRankingParam}`;
-      const apiRequest = () => fetch(endPoint).then((resp) => resp.json());
-      const response = await apiRequest();
-      console.log('apiRequest', apiRequest());
-      const result = {
-        code: '200',
-        result: response
-      };
-      console.log('response', response);
-      return response as SakeRanking;
+      try {
+        const endPoint = `http://localhost:3000/api/ranking?${sakeRankingParam}`;
+        console.log(endPoint);
+        const apiRequest = () =>
+          fetch(endPoint).then((resp) => {
+            console.log(resp.json());
+            return resp.json();
+          });
+        const response = await apiRequest();
+        console.log('apiRequest', apiRequest());
+        const result = {
+          code: '200',
+          result: response
+        };
+        console.log('response', response);
+        return response as SakeRanking;
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   set: ({ set }, newValue: SakeRanking | null) => {
