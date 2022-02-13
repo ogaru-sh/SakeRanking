@@ -1,6 +1,7 @@
-import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/molecules/sakeCell/SakeLisItem';
+import { useRecoilValue } from 'recoil';
+import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 
 const itemData = [
   {
@@ -64,9 +65,6 @@ const itemData = [
     author: '@southside_customs'
   }
 ];
-import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
-import { useRecoilValue } from 'recoil';
-import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 
 export const SakeImageList = () => {
   const sakeRankingResult = useRecoilValue(sakeRankingSelector(''));
