@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { SakeImageList } from '@/components/organisms/sakeCell/SakeList';
+import { css } from '@emotion/react';
 
 const drawerWidth = 240;
 
@@ -75,7 +76,7 @@ export const Home = () => {
       <AppBar position="fixed" open={true}>
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            日本酒ランキング 2022年2月版
           </Typography>
         </Toolbar>
       </AppBar>

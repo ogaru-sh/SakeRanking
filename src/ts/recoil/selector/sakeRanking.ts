@@ -15,7 +15,7 @@ export const sakeRankingSelector = selectorFamily({
       const sakeRanking = get(sakeRankingState);
       const sakeRankingParam = get(sakeRankingParamState);
       const sakeParam =
-        sakeRankingParam.length !== 0 ? sakeRankingParam.join('&') : '';
+        sakeRankingParam.length === 0 ? '' : sakeRankingParam.join('&');
       if (sakeRanking && param === sakeParam) {
         return sakeRanking;
       } else {
