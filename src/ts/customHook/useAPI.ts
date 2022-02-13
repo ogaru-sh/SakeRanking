@@ -9,10 +9,6 @@ import {
 import { sakeRankingSelector } from '../recoil/selector/communityCards';
 
 export const useSakeRankigAPI = (param: any) => {
-  const sakeRanking = useRecoilValue(sakeRankingSelector);
-  const setSakeRankiingParam = useSetRecoilState(sakeRankingParamState);
-  useEffect(() => {
-    setSakeRankiingParam(param);
-  }, [param]);
+  const sakeRanking = useRecoilValue(sakeRankingSelector(param));
   return sakeRanking;
 };
