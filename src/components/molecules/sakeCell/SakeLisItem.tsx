@@ -1,17 +1,39 @@
 import ImageListItem from '@mui/material/ImageListItem';
 import { SakeListItemBar } from '@/components/atoms/sakeCell/SakeListItemBar';
-import { ListItem } from '@/ts/interfaces';
+import { RankingItem } from '@/ts/modules/interfaces';
+import { css } from '@emotion/react';
 
-export const SakeListItem = (props: { item: ListItem }) => {
-  const { img, title, author } = props.item;
+const style = {
+  image: css`
+    width: 200px;
+    height: 200px;
+  `
+};
+
+export const SakeListItem = (props: { item: RankingItem }) => {
+  const { brand, pictures, flavorChartUrl } = props.item.brandSummary;
+  const pictureUrl: string = pictures.length === 0 ? '' : pictures[0].url;
   return (
-    <ImageListItem key={img}>
-      <img
-        src={`${img}?w=248&fit=crop&auto=format`}
-        srcSet={`${img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-        alt={title}
-        loading="lazy"
-      />
+    <ImageListItem key={flavorChartUrl}>
+      <table>
+        <td>
+          <img
+            css={style.image}
+            src={pictureUrl}
+            alt={brand.name}
+            loading="lazy"
+          />
+        </td>
+        <td>
+          <img
+            css={style.image}
+            src={flavorChartUrl}
+            alt={brand.name}
+            loading="lazy"
+          />
+        </td>
+      </table>
+
       <SakeListItemBar item={props.item} />
     </ImageListItem>
   );

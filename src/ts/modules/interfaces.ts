@@ -7,12 +7,8 @@ export interface Config {
   };
 }
 
-export interface ListItem {
-  img: string;
-  title: string;
-  author: string;
-}
-
+// さけのわRankingAPI
+// ---------------------------------------
 export interface Area {
   id: number;
   code: number;
@@ -70,7 +66,7 @@ export interface Ranking {
   };
 }
 
-export interface Pictures {
+export interface Picture {
   id: number;
   size: {
     width: number;
@@ -150,31 +146,36 @@ export interface Review {
   key: string;
 }
 
+export interface RankingItem {
+  yearMonth: string;
+  rank: number;
+  score: number;
+  brandSummary: {
+    brand: Brand;
+    flaverTags: FlavorTag[];
+    media: Media[];
+    similarBrands: SimilarBrand[];
+    ranking: Ranking;
+    statistics: Statistics;
+    pictures: Picture[];
+    flavorChartUrl: string;
+    simpleFlavorFeature: SimpleFlavorFeature;
+    comments: Comment[];
+    review: Review;
+  };
+}
+
 export interface SakeRanking {
-  ranking: {
-    yearMonth: string;
-    rank: number;
-    score: number;
-    bandSummary: {
-      brand: Brand;
-      flaverTags: FlavorTag[];
-      media: Media[];
-      similarBrands: SimilarBrand[];
-      ranking: Ranking;
-      statistics: Statistics;
-      pictures: Pictures;
-      flavorChartUrl: string;
-      simpleFlavorFeature: SimpleFlavorFeature;
-      comments: Comment[];
-      review: Review;
-    };
-  }[];
+  ranking: RankingItem[];
   pagination: {
     more: boolean;
   };
 }
+// ---------------------------------------
 
+// APIが増えた場合、FetchApiResultに追記
 export type FetchApiResult = SakeRanking;
+
 export type FetchAPI = (
   path: string,
   query: string
