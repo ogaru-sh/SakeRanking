@@ -3,7 +3,9 @@ import {
   sakeRankingParamState,
   sakeRankingState
 } from '@/ts/recoil/atom/communityCards';
-import { SakeRanking } from '@/ts/interfaces';
+import { SakeRanking } from '@/ts/modules/interfaces';
+import { fetchAPI } from '@/ts/modules/fetchAPI';
+import { config } from '@/ts/modules/config';
 
 export const sakeRankingSelector = selector({
   key: 'sakeRankingFetchAPI',
@@ -16,20 +18,7 @@ export const sakeRankingSelector = selector({
       return sakeRanking;
     } else {
       try {
-        const endPoint = `http://localhost:3000/api/ranking?${sakeRankingParam}`;
-        console.log(endPoint);
-        const apiRequest = () =>
-          fetch(endPoint).then((resp) => {
-            console.log(resp.json());
-            return resp.json();
-          });
-        const response = await apiRequest();
-        console.log('apiRequest', apiRequest());
-        const result = {
-          code: '200',
-          result: response
-        };
-        console.log('response', response);
+        const response = fetchAPI(config.sakeAPI.basePath.ranking, []);
         return response as SakeRanking;
       } catch (error) {
         console.log(error);
