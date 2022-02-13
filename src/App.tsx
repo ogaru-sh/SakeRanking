@@ -1,13 +1,12 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import { Home } from '@/components/pages/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SakeRanking } from '@/components/pages/SakeRanking';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<SakeRanking />} />
+      </Routes>
     </BrowserRouter>
   );
 };
