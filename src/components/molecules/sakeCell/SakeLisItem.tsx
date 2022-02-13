@@ -16,24 +16,27 @@ export const SakeListItem = (props: { item: RankingItem }) => {
   return (
     <ImageListItem key={flavorChartUrl}>
       <table>
-        <td>
-          <img
-            css={style.image}
-            src={pictureUrl}
-            alt={brand.name}
-            loading="lazy"
-          />
-        </td>
-        <td>
-          <img
-            css={style.image}
-            src={flavorChartUrl}
-            alt={brand.name}
-            loading="lazy"
-          />
-        </td>
+        <tbody>
+          <tr>
+            <td>
+              <img
+                css={style.image}
+                src={pictureUrl}
+                alt={brand.name}
+                loading="lazy"
+              />
+            </td>
+            <td>
+              <img
+                css={style.image}
+                src={flavorChartUrl}
+                alt={brand.name}
+                loading="lazy"
+              />
+            </td>
+          </tr>
+        </tbody>
       </table>
-
       <SakeListItemBar item={props.item} />
     </ImageListItem>
   );
