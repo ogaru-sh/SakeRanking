@@ -2,7 +2,7 @@ import { selector, DefaultValue, selectorFamily } from 'recoil';
 import {
   sakeRankingParamState,
   sakeRankingState
-} from '@/ts/recoil/atom/communityCards';
+} from '@/ts/recoil/atom/sakeRanking';
 import { SakeRanking } from '@/ts/modules/interfaces';
 import { fetchAPI } from '@/ts/modules/fetchAPI';
 import { config } from '@/ts/modules/config';

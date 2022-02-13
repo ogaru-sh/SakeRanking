@@ -65,9 +65,12 @@ const itemData = [
   }
 ];
 import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
+import { useRecoilValue } from 'recoil';
+import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 
 export const SakeImageList = () => {
-  const sakeRankingResult = useSakeRankigAPI([]);
+  const sakeRankingResult = useRecoilValue(sakeRankingSelector(''));
+  console.log('sakeRanking', sakeRankingResult);
   return (
     <ImageList sx={{ width: 500, height: 450 }}>
       {itemData.map((item, index) => (
