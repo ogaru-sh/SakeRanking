@@ -68,7 +68,7 @@ import { useSakeRankigAPI } from '@/ts/customHook/useAPI';
 
 export const SakeImageList = () => {
   const resoponse = useSakeRankigAPI('');
-  console.log('sakeRanking', resoponse);
+  console.log('sakeRang', resoponse);
 
   return (
     <ImageList sx={{ width: 500, height: 450 }}>

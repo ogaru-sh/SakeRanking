@@ -11,9 +11,6 @@ export const sakeRankingSelector = selector({
   key: 'sakeRankingFetchAPI',
   get: async ({ get }) => {
     const sakeRanking = get(sakeRankingState);
-    const sakeRankingParam = get(sakeRankingParamState);
-    console.log(sakeRankingParam);
-    console.log('sakeRanking', sakeRanking);
     if (sakeRanking) {
       return sakeRanking;
     } else {

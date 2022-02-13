@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { SakeRanking } from '../interfaces';
+import { SakeRanking } from '../modules/interfaces';
 import {
   sakeRankingState,
   sakeRankingParamState
@@ -10,8 +10,9 @@ import { sakeRankingSelector } from '../recoil/selector/communityCards';
 
 export const useSakeRankigAPI = (param: any) => {
   const sakeRanking = useRecoilValue(sakeRankingSelector);
+  const setSakeRankiingParam = useSetRecoilState(sakeRankingParamState);
   useEffect(() => {
-    console.log(sakeRanking);
+    setSakeRankiingParam(param);
   }, [param]);
-  //   return sakeRanking;
+  return sakeRanking;
 };
