@@ -3,7 +3,7 @@ import {
   sakeRankingParamState,
   sakeRankingState
 } from '@/ts/recoil/atom/sakeRanking';
-import { SakeRanking } from '@/ts/modules/interfaces';
+import { FetchAPI, SakeRanking } from '@/ts/modules/interfaces';
 import { fetchAPI } from '@/ts/modules/fetchAPI';
 import { config } from '@/ts/modules/config';
 
@@ -21,9 +21,9 @@ export const sakeRankingSelector = selectorFamily({
       } else {
         try {
           const response = fetchAPI(config.sakeAPI.basePath.ranking, param);
-          return response as SakeRanking;
-        } catch (error) {
-          console.log(error);
+          return response;
+        } catch (error: any) {
+          throw new Error(error);
         }
       }
     }
