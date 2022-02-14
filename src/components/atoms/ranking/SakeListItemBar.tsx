@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { RankingItem } from '@/ts/modules/interfaces';
+import { RankingViewItem } from '@/ts/modules/interfaces';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useRecoilState } from 'recoil';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
 
-export const SakeListItemBar = (props: { item: RankingItem }) => {
+export const SakeListItemBar = (props: {
+  item: RankingViewItem;
+  index: number;
+}) => {
   const { item } = props;
   const { brand } = item.brandSummary;
   const [sakeFavoriteList, setSakeFavoriteList] = useRecoilState(
     sakeFavoriteListState
   );
-  console.log(sakeFavoriteList);
+
   const [isFavorite, setFavorite] = useState<boolean>(false);
   const starColor = isFavorite ? 'red' : 'white';
+
   return (
     <ImageListItemBar
       sx={{
@@ -32,8 +36,16 @@ export const SakeListItemBar = (props: { item: RankingItem }) => {
         >
           <StarBorderIcon
             onClick={() => {
-              isFavorite ? setFavorite(false) : setFavorite(true);
-              setSakeFavoriteList([...sakeFavoriteList, item]);
+              if (isFavorite) {
+                const copyList = sakeFavoriteList.filter((val) => {
+                  return val.id !== item.id;
+                });
+                setFavorite(false);
+                setSakeFavoriteList(copyList);
+              } else {
+                setFavorite(true);
+                setSakeFavoriteList([...sakeFavoriteList, item]);
+              }
             }}
           />
         </IconButton>

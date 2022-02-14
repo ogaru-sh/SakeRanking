@@ -24,9 +24,15 @@ export const SakeImageList = () => {
       cols={columns}
     >
       {sakeRankingResult !== null
-        ? sakeRankingResult.ranking.map((item, index) => (
-            <SakeListItem item={item} key={index} />
-          ))
+        ? sakeRankingResult.ranking.map(
+            (item: RankingViewItem, index: number) => (
+              <SakeListItem
+                item={{ ...item, id: index }}
+                index={index}
+                key={index}
+              />
+            )
+          )
         : ''}
     </ImageList>
   );
