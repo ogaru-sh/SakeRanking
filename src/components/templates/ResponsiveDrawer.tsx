@@ -47,9 +47,9 @@ export const DefaultDrawer = () => (
   <div>
     <Toolbar />
     <Divider />
-    <SideBarItem title={'home'} path={'/'} />
+    <SideBarItem title={'ranking'} path={'/'} />
     <Divider />
-    <SideBarItem title={'ranking'} path={'ranking'} />
+    <SideBarItem title={'favorite'} path={'favorite'} />
   </div>
 );
 
@@ -85,7 +85,7 @@ export const ResponsiveDrawer = (props: Props) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            nomurabbit react web site
+            【2022 2月】日本酒ランキング
           </Typography>
         </Toolbar>
       </AppBar>
