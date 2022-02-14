@@ -6,6 +6,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SakeRanking />} />
+        <Route path="/ranking" element={<SakeRanking />} />
       </Routes>
     </BrowserRouter>
   );

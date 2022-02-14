@@ -16,5 +16,9 @@ export const constant: Constant = {
     md: 960,
     lg: 1280,
     xl: 1920
+  },
+  responsiveTag: {
+    cols: [1, 2],
+    listWidth: [400, 900]
   }
 };
