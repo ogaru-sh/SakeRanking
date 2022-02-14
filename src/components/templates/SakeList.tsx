@@ -2,7 +2,7 @@ import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/molecules/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
-import { SakeRanking } from '@/ts/modules/interfaces';
+import { RankingItem, SakeRanking } from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 
@@ -24,15 +24,13 @@ export const SakeImageList = () => {
       cols={columns}
     >
       {sakeRankingResult !== null
-        ? sakeRankingResult.ranking.map(
-            (item: RankingViewItem, index: number) => (
-              <SakeListItem
-                item={{ ...item, id: index }}
-                index={index}
-                key={index}
-              />
-            )
-          )
+        ? sakeRankingResult.ranking.map((item: RankingItem, index: number) => (
+            <SakeListItem
+              item={{ ...item, id: index }}
+              index={index}
+              key={index}
+            />
+          ))
         : ''}
     </ImageList>
   );

@@ -40,7 +40,7 @@ export const SakeListItem = (props: {
           </tr>
         </tbody>
       </table>
-      <SakeListItemBar item={item} index={index} />
+      <SakeListItemBar item={item} />
     </ImageListItem>
   );
 };
