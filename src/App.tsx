@@ -1,15 +1,15 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { SakeRanking } from '@/components/pages/SakeRanking';
-import {} from 'react-router-dom';
+import { config } from './ts/modules/config';
 
-const App = () => {
+export const App = () => {
+  const { root, favorite } = config.pagePath;
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SakeRanking />} />
-        <Route path="/ranking" element={<SakeRanking />} />
+        <Route path={root} element={<SakeRanking />} />
+        <Route path={favorite} element={<SakeRanking />} />
       </Routes>
     </BrowserRouter>
   );
 };
-export { App };
