@@ -29,6 +29,8 @@ export const SakeImageList = () => {
       gap={20}
       cols={columns}
     >
+      {/* 日本酒ランキングAPIからデータを取得し、ランキングを表示
+          お気に入り画面の場合はお気に入りリストを表示 */}
       {sakeRankingResult !== null && location.pathname === root
         ? sakeRankingResult.ranking.map((item: RankingItem, index: number) => (
             <SakeListItem

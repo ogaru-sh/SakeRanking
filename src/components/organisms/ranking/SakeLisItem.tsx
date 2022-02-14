@@ -17,6 +17,7 @@ export const SakeListItem = (props: {
     `
   };
   return (
+    // 日本酒のイメージとフレーバーのレーダーチャートを並べて表示
     <ImageListItem key={flavorChartUrl}>
       <table>
         <tbody>
