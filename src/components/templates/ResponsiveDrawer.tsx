@@ -1,61 +1,17 @@
-import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-
-const drawerWidth = 240;
-
-interface Props {
-  window?: () => Window;
-  children: React.ReactNode;
-}
-
-const SideBarItem = (props: { title: string; path: string }) => {
-  const { title, path } = props;
-  const navigate = useNavigate();
-  return (
-    <List>
-      <ListItem
-        button
-        key={title}
-        onClick={() => {
-          navigate(path);
-        }}
-      >
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary={title} />
-      </ListItem>
-    </List>
-  );
-};
-
-export const DefaultDrawer = () => (
-  <div>
-    <Toolbar />
-    <Divider />
-    <SideBarItem title={'ranking'} path={'/'} />
-    <Divider />
-    <SideBarItem title={'favorite'} path={'favorite'} />
-  </div>
-);
+import { DefaultDrawer } from '../molecules/responsiveDrawer/DefaultDrawer';
+import { Header } from '../organisms/responsiveDrawer/AppBar';
+import { constant } from '@/ts/modules/config';
+import { Props } from '@/ts/modules/interfaces';
 
 export const ResponsiveDrawer = (props: Props) => {
+  const drawerWidth = constant.drawerWidth;
   const { window, children } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -67,28 +23,7 @@ export const ResponsiveDrawer = (props: Props) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            【2022 2月】日本酒ランキング
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Header />
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
