@@ -4,6 +4,7 @@ import { constant } from '@/ts/modules/config';
 import { responsiveItemState } from '@/ts/recoil/atom/sakeRanking';
 import { ResponsiveItem } from '../modules/interfaces';
 
+// 画面サイズによって日本酒ランキングリストのカラム数と画像サイズを動的に変更
 export const useResponsiveItem = () => {
   const { breakpoints } = constant;
   const getColumns = (width: number): number => {
