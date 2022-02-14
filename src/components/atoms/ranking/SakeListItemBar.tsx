@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 export const SakeListItemBar = (props: { item: RankingItem }) => {
-  const { brand, pictures, flavorChartUrl } = props.item.brandSummary;
+  const { brand } = props.item.brandSummary;
   return (
     <ImageListItemBar
       sx={{

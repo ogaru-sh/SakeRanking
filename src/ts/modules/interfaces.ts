@@ -15,6 +15,10 @@ export interface Constant {
     lg: number;
     xl: number;
   };
+  responsiveTag: {
+    cols: number[];
+    listWidth: number[];
+  };
 }
 
 // さけのわRankingAPI

@@ -23,52 +23,45 @@ interface Props {
   children: React.ReactNode;
 }
 
+const SideBarItem = (props: { title: string; path: string }) => {
+  const { title, path } = props;
+  const navigate = useNavigate();
+  const move = (nextPage: string) => {
+    navigate(nextPage);
+  };
+  return (
+    <List>
+      <ListItem
+        button
+        key={title}
+        onClick={() => {
+          move(path);
+        }}
+      >
+        <ListItemIcon>
+          <HomeIcon />
+        </ListItemIcon>
+        <ListItemText primary={title} />
+      </ListItem>
+    </List>
+  );
+};
+
 export const ResponsiveDrawer = (props: Props) => {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-  };
-
-  const move = (nextPage: string) => {
-    navigate(nextPage);
   };
 
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
-      <List>
-        <ListItem
-          button
-          key={'home'}
-          onClick={() => {
-            move('/web/home');
-          }}
-        >
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary={'home'} />
-        </ListItem>
-      </List>
+      <SideBarItem title={'home'} path={'/'} />
       <Divider />
-      <List>
-        <ListItem
-          button
-          key={'portrait'}
-          onClick={() => {
-            move('/web/portrait');
-          }}
-        >
-          <ListItemIcon>
-            <ImageIcon />
-          </ListItemIcon>
-          <ListItemText primary={'portrait'} />
-        </ListItem>
-      </List>
+      <SideBarItem title={'ranking'} path={'ranking'} />
     </div>
   );
 

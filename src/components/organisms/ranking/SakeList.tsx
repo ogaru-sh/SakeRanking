@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ImageList from '@mui/material/ImageList';
-import { SakeListItem } from '@/components/molecules/sakeCell/SakeLisItem';
+import { SakeListItem } from '@/components/molecules/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 import { SakeRanking } from '@/ts/modules/interfaces';
@@ -42,6 +42,7 @@ export const SakeImageList = () => {
     setColumns(getColumns(window.innerWidth));
     setListItemWidth(getListItemWidth(window.innerWidth));
   };
+
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
     return () => window.removeEventListener('resize', updateDimensions);
