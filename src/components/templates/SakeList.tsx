@@ -1,5 +1,5 @@
 import ImageList from '@mui/material/ImageList';
-import { SakeListItem } from '@/components/molecules/ranking/SakeLisItem';
+import { SakeListItem } from '@/components/organisms/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 import { RankingItem, SakeRanking } from '@/ts/modules/interfaces';

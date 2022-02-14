@@ -1,5 +1,5 @@
 import ImageListItem from '@mui/material/ImageListItem';
-import { SakeListItemBar } from '@/components/atoms/ranking/SakeListItemBar';
+import { SakeListItemBar } from '@/components/molecules/ranking/SakeListItemBar';
 import { RankingViewItem } from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
 
