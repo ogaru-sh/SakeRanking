@@ -3,16 +3,15 @@ import { SakeListItemBar } from '@/components/atoms/ranking/SakeListItemBar';
 import { RankingItem } from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
 
-const style = {
-  image: css`
-    width: 200px;
-    height: 200px;
-  `
-};
-
 export const SakeListItem = (props: { item: RankingItem }) => {
   const { brand, pictures, flavorChartUrl } = props.item.brandSummary;
   const pictureUrl: string = pictures.length === 0 ? '' : pictures[0].url;
+  const style = {
+    image: css`
+      width: 200px;
+      height: 200px;
+    `
+  };
   return (
     <ImageListItem key={flavorChartUrl}>
       <table>
