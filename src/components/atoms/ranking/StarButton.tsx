@@ -15,9 +15,15 @@ export const StarButton = (props: { item: RankingViewItem }) => {
     sakeFavoriteListState
   );
   const location = useLocation();
+  // ランキングページでお気に入り表示するためのチェック
+  const wasFavoriteItem = sakeFavoriteList.find((val) =>
+    val.id === item.id ? true : false
+  );
   // お気に入りページであれば、最初からお気に入りボタンが選択済みとなるように初期化
   const [isFavorite, setFavorite] = useState<boolean>(
-    location.pathname === config.pagePath.favorite ? true : false
+    location.pathname === config.pagePath.favorite || wasFavoriteItem
+      ? true
+      : false
   );
   const starColor = isFavorite ? 'red' : 'white';
   return (
