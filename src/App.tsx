@@ -1,16 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./components/Home"
-import Portrait from "./components/Portrait"
+import { Routes, Route } from 'react-router-dom';
+import { SakeRanking } from '@/components/pages/SakeRanking';
 
-const App = () => (
-  <BrowserRouter>
+const App = () => {
+  return (
     <Routes>
-      <Route path="/web/portrait" element={<Portrait />} />
-      <Route path="/web/home" element={<Home />} />
-      <Route path="/web/" element={<Home />} />
-      <Route path="*" element={<Home />} />
+      <Route path="/" element={<SakeRanking />} />
+      <Route path="/ranking" element={<SakeRanking />} />
     </Routes>
-  </BrowserRouter>
-)
-
-export default App
+  );
+};
+export { App };
