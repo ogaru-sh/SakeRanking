@@ -7,6 +7,7 @@ import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
 import { useLocation } from 'react-router-dom';
 import { config } from '@/ts/modules/config';
 
+// お気に入りボタン
 export const StarButton = (props: { item: RankingViewItem }) => {
   const { item } = props;
   const { brand } = item.brandSummary;
@@ -14,6 +15,7 @@ export const StarButton = (props: { item: RankingViewItem }) => {
     sakeFavoriteListState
   );
   const location = useLocation();
+  // お気に入りページであれば、最初からお気に入りボタンが選択済みとなるように初期化
   const [isFavorite, setFavorite] = useState<boolean>(
     location.pathname === config.pagePath.favorite ? true : false
   );
@@ -23,9 +25,9 @@ export const StarButton = (props: { item: RankingViewItem }) => {
       sx={{ color: `${starColor}` }}
       aria-label={`star ${brand.name}`}
       onClick={() => {
-        console.log(sakeFavoriteList);
-        console.log(item);
         if (isFavorite) {
+          // クリックした日本酒がお気に入りリストに入っていれば
+          // それ以外を返却し新しいリストを作成
           const copyList = sakeFavoriteList.filter((val) => {
             return val.id !== item.id;
           });
