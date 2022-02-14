@@ -11,7 +11,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
-import ImageIcon from '@mui/icons-material/Image';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -26,16 +25,13 @@ interface Props {
 const SideBarItem = (props: { title: string; path: string }) => {
   const { title, path } = props;
   const navigate = useNavigate();
-  const move = (nextPage: string) => {
-    navigate(nextPage);
-  };
   return (
     <List>
       <ListItem
         button
         key={title}
         onClick={() => {
-          move(path);
+          navigate(path);
         }}
       >
         <ListItemIcon>
@@ -47,6 +43,16 @@ const SideBarItem = (props: { title: string; path: string }) => {
   );
 };
 
+export const DefaultDrawer = () => (
+  <div>
+    <Toolbar />
+    <Divider />
+    <SideBarItem title={'home'} path={'/'} />
+    <Divider />
+    <SideBarItem title={'ranking'} path={'ranking'} />
+  </div>
+);
+
 export const ResponsiveDrawer = (props: Props) => {
   const { window, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -54,16 +60,6 @@ export const ResponsiveDrawer = (props: Props) => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-  const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <SideBarItem title={'home'} path={'/'} />
-      <Divider />
-      <SideBarItem title={'ranking'} path={'ranking'} />
-    </div>
-  );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -115,7 +111,7 @@ export const ResponsiveDrawer = (props: Props) => {
             }
           }}
         >
-          {drawer}
+          <DefaultDrawer />
         </Drawer>
         <Drawer
           variant="permanent"
@@ -128,7 +124,7 @@ export const ResponsiveDrawer = (props: Props) => {
           }}
           open
         >
-          {drawer}
+          <DefaultDrawer />
         </Drawer>
       </Box>
       <Box
