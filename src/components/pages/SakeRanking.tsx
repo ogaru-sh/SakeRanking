@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { ResponsiveDrawer } from '@/components/templates/ResponsiveDrawer';
-import { SakeImageList } from '@/components/templates/SakeList';
+import { SakeImageList } from '@/components/templates/SakeImageList';
 
 export const SakeRanking = () => {
   return (
