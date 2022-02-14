@@ -2,8 +2,8 @@ import { describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
-import { SakeImageList } from '../components/organisms/ranking/SakeList';
-import { ResponsiveDrawer } from '../components/templates/ResponsiveDrawer';
+import { SakeImageList } from '@/components/templates/SakeImageList';
+import { ResponsiveDrawer } from '@/components/templates/ResponsiveDrawer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('hole component', () => {
@@ -20,6 +20,6 @@ describe('hole component', () => {
       </RecoilRoot>
     );
     // fixme: vitestのtypesがまだ未対応のためlint error
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByText('Loading...')).toBeInTheDocument(); // eslint-disable-line
   });
 });
