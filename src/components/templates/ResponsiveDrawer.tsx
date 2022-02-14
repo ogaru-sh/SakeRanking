@@ -12,7 +12,6 @@ import { SideBar } from '../organisms/responsiveDrawer/SideBar';
 export const ResponsiveDrawer = (props: Props) => {
   const drawerWidth = constant.drawerWidth;
   const { window, children } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />

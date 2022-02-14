@@ -1,11 +1,6 @@
-import { useState } from 'react';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { RankingViewItem } from '@/ts/modules/interfaces';
-import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { useRecoilState } from 'recoil';
-import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
-import { StarButton } from './StarButton';
+import { StarButton } from '../../atoms/ranking/StarButton';
 
 export const SakeListItemBar = (props: { item: RankingViewItem }) => {
   const { item } = props;
