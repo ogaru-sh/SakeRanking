@@ -200,3 +200,8 @@ export type FetchAPI = (
   path: string,
   query: string
 ) => Promise<FetchApiResult | null>;
+
+export interface ResponsiveItem {
+  columns: number;
+  listItemWidth: number;
+}
