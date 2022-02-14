@@ -18,12 +18,11 @@
   - vitest 0.2
 
 ## Setup
-
-`git clone https://github.com/ogaru-sh/HackerNews`
-`npm install`
-`npm run build`
-`npm run start`
-`http://localhost:3000/`へアクセス
+- `git clone https://github.com/ogaru-sh/SakeRanking`
+- `npm install`
+- `npm run build`
+- `npm run start`
+- `http://localhost:3000/`へアクセス
 
 ### Develop mode
 
