@@ -29,6 +29,11 @@
 
 `npm run dev`
 
+### demo
+
+- firebase
+  - https://sakeranking.web.app
+
 ### Function
 
 - タブ
