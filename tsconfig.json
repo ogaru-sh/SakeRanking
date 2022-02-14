@@ -32,6 +32,6 @@
       }
     ]
   },
-  "include": ["./src", "./.eslintrc.js", "./vite.config.ts", "server.js"],
-  "exclude": ["node_modules"]
+  "include": ["./src", "./.eslintrc.js", "./vite.config.ts"],
+  "exclude": ["node_modules", "./src/test/*"]
 }
