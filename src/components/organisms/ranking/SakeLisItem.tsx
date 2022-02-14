@@ -7,7 +7,7 @@ export const SakeListItem = (props: {
   item: RankingViewItem;
   index: number;
 }) => {
-  const { item, index } = props;
+  const { item } = props;
   const { brand, pictures, flavorChartUrl } = item.brandSummary;
   const pictureUrl: string = pictures.length === 0 ? '' : pictures[0].url;
   const style = {
