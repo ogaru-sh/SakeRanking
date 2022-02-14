@@ -29,7 +29,7 @@
 
 `npm run dev`
 
-### demo
+### Demo
 
 - firebase
   - https://sakeranking.web.app
