@@ -4,6 +4,8 @@ import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useRecoilState } from 'recoil';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
+import { useLocation } from 'react-router-dom';
+import { config } from '@/ts/modules/config';
 
 export const StarButton = (props: { item: RankingViewItem }) => {
   const { item } = props;
@@ -11,14 +13,18 @@ export const StarButton = (props: { item: RankingViewItem }) => {
   const [sakeFavoriteList, setSakeFavoriteList] = useRecoilState(
     sakeFavoriteListState
   );
-
-  const [isFavorite, setFavorite] = useState<boolean>(false);
+  const location = useLocation();
+  const [isFavorite, setFavorite] = useState<boolean>(
+    location.pathname === config.pagePath.favorite ? true : false
+  );
   const starColor = isFavorite ? 'red' : 'white';
   return (
     <IconButton
       sx={{ color: `${starColor}` }}
       aria-label={`star ${brand.name}`}
       onClick={() => {
+        console.log(sakeFavoriteList);
+        console.log(item);
         if (isFavorite) {
           const copyList = sakeFavoriteList.filter((val) => {
             return val.id !== item.id;

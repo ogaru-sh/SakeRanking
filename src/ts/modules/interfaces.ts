@@ -5,6 +5,10 @@ export interface Config {
       ranking: string;
     };
   };
+  pagePath: {
+    root: string;
+    favorite: string;
+  };
 }
 
 export interface Constant {

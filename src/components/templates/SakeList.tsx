@@ -7,19 +7,20 @@ import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
+import { config } from '@/ts/modules/config';
 
 export const SakeImageList = () => {
-  const sakeRankingResult: SakeRanking | null = useRecoilValue(
-    sakeRankingSelector('')
-  );
+  const { columns, listItemWidth } = useResponsiveItem();
+  const { root, favorite } = config.pagePath;
+  const location = useLocation();
   const style = {
     imageList: css`
       margin: 0 auto;
     `
   };
-  const location = useLocation();
-  console.log(useLocation());
-  const { columns, listItemWidth } = useResponsiveItem();
+  const sakeRankingResult: SakeRanking | null = useRecoilValue(
+    sakeRankingSelector('')
+  );
   const favoriteList = useRecoilValue(sakeFavoriteListState);
   return (
     <ImageList
@@ -28,7 +29,7 @@ export const SakeImageList = () => {
       gap={20}
       cols={columns}
     >
-      {sakeRankingResult !== null && location.pathname === '/'
+      {sakeRankingResult !== null && location.pathname === root
         ? sakeRankingResult.ranking.map((item: RankingItem, index: number) => (
             <SakeListItem
               item={{ ...item, id: index }}
@@ -36,13 +37,9 @@ export const SakeImageList = () => {
               key={index}
             />
           ))
-        : location.pathname === '/favorite'
+        : location.pathname === favorite
         ? favoriteList.map((item: RankingItem, index: number) => (
-            <SakeListItem
-              item={{ ...item, id: index }}
-              index={index}
-              key={index}
-            />
+            <SakeListItem item={item} index={index} key={index} />
           ))
         : ''}
     </ImageList>
