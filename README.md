@@ -18,6 +18,7 @@
   - vitest 0.2
 
 ## Setup
+
 - `git clone https://github.com/ogaru-sh/SakeRanking`
 - `npm install`
 - `npm run build`
@@ -34,4 +35,4 @@
   - ランキング
     - さけのわ API から日本酒ランキングを取得し表示
   - お気に入り
-    - 未実装
+    - ランキングページでスターボタンを押したものをお気に入りとして表示

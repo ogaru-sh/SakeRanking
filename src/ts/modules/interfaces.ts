@@ -5,6 +5,10 @@ export interface Config {
       ranking: string;
     };
   };
+  pagePath: {
+    root: string;
+    favorite: string;
+  };
 }
 
 export interface Constant {
@@ -167,6 +171,7 @@ export interface Review {
 }
 
 export interface RankingItem {
+  id: number;
   yearMonth: string;
   rank: number;
   score: number;
@@ -193,6 +198,10 @@ export interface SakeRanking {
 }
 // ---------------------------------------
 
+export interface RankingViewItem extends RankingItem {
+  id: number;
+}
+
 // APIが増えた場合、FetchApiResultに追記
 export type FetchApiResult = SakeRanking;
 
@@ -201,6 +210,7 @@ export type FetchAPI = (
   query: string
 ) => Promise<FetchApiResult | null>;
 
+// 画面サイズによって動的に変わる値
 export interface ResponsiveItem {
   columns: number;
   listItemWidth: number;

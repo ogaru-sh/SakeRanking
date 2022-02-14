@@ -6,6 +6,10 @@ export const config: Config = {
     basePath: {
       ranking: '/api/ranking'
     }
+  },
+  pagePath: {
+    root: '/',
+    favorite: '/favorite'
   }
 };
 
