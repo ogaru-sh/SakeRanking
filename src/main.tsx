@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
 import './index.css';
 import { App } from './App';
-// import { PokerField } from './components/page/ScenarioCreate/PokerField';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
