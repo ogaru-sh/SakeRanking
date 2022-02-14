@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && npm run lint:format && vite build",
+    "build": "tsc && npm run lint:format && vite build && firebase deploy",
     "preview": "vite preview",
     "lint": "npx eslint . --ext .ts,.tsx ",
     "lint:format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
@@ -33,6 +33,7 @@
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.1",
     "eslint-config-prettier": "^8.3.0",
+    "firebase": "^9.6.6",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
