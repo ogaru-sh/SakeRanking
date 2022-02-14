@@ -20,5 +20,6 @@ export const constant: Constant = {
   responsiveTag: {
     cols: [1, 2],
     listWidth: [400, 900]
-  }
+  },
+  drawerWidth: 240
 };

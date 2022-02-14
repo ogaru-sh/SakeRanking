@@ -19,6 +19,7 @@ describe('hole component', () => {
         </Router>
       </RecoilRoot>
     );
+    // fixme: vitestのtypesがまだ未対応のためlint error
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 });

@@ -19,6 +19,12 @@ export interface Constant {
     cols: number[];
     listWidth: number[];
   };
+  drawerWidth: number;
+}
+
+export interface Props {
+  window?: () => Window;
+  children: React.ReactNode;
 }
 
 // さけのわRankingAPI
