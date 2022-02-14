@@ -6,8 +6,8 @@ import { SakeImageList } from '../components/organisms/ranking/SakeList';
 import { ResponsiveDrawer } from '../components/templates/ResponsiveDrawer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-describe('Title Component', () => {
-  test('display the title correctly', async () => {
+describe('hole component', () => {
+  test('display the component correctly', async () => {
     render(
       <RecoilRoot>
         <Router>
