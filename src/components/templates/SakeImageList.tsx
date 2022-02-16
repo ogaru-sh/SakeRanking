@@ -3,8 +3,8 @@ import { SakeListItem } from '@/components/organisms/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
 import {
+  FavoriteItem,
   RankingItem,
-  RankingViewItem,
   SakeRanking
 } from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
@@ -40,7 +40,7 @@ export const SakeImageList = () => {
             <SakeListItem item={{ ...item, id: index }} key={index} />
           ))
         : location.pathname === favorite
-        ? favoriteList.map((item: RankingViewItem, index: number) => (
+        ? favoriteList.map((item: FavoriteItem, index: number) => (
             <SakeListItem item={item} key={index} />
           ))
         : ''}
