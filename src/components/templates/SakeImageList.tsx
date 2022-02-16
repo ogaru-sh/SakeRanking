@@ -2,7 +2,11 @@ import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/organisms/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
-import { RankingItem, SakeRanking } from '@/ts/modules/interfaces';
+import {
+  RankingItem,
+  RankingViewItem,
+  SakeRanking
+} from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
@@ -33,15 +37,11 @@ export const SakeImageList = () => {
           お気に入り画面の場合はお気に入りリストを表示 */}
       {sakeRankingResult !== null && location.pathname === root
         ? sakeRankingResult.ranking.map((item: RankingItem, index: number) => (
-            <SakeListItem
-              item={{ ...item, id: index }}
-              index={index}
-              key={index}
-            />
+            <SakeListItem item={{ ...item, id: index }} key={index} />
           ))
         : location.pathname === favorite
-        ? favoriteList.map((item: RankingItem, index: number) => (
-            <SakeListItem item={item} index={index} key={index} />
+        ? favoriteList.map((item: RankingViewItem, index: number) => (
+            <SakeListItem item={item} key={index} />
           ))
         : ''}
     </ImageList>
