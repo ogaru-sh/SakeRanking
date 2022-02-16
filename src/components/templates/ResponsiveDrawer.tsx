@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Drawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
-import { DefaultDrawer } from '@/components/molecules/responsiveDrawer/DefaultDrawer';
 import { Header } from '@/components/organisms/responsiveDrawer/AppBar';
 import { constant } from '@/ts/modules/config';
 import { Props } from '@/ts/modules/interfaces';
