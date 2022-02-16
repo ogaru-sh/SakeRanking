@@ -202,6 +202,8 @@ export interface RankingViewItem extends RankingItem {
   id: number;
 }
 
+export type FavoriteItem = RankingViewItem;
+
 // APIが増えた場合、FetchApiResultに追記
 export type FetchApiResult = SakeRanking;
 
