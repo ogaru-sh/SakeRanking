@@ -3,10 +3,7 @@ import { SakeListItemBar } from '@/components/molecules/ranking/SakeListItemBar'
 import { RankingViewItem } from '@/ts/modules/interfaces';
 import { css } from '@emotion/react';
 
-export const SakeListItem = (props: {
-  item: RankingViewItem;
-  index: number;
-}) => {
+export const SakeListItem = (props: { item: RankingViewItem }) => {
   const { item } = props;
   const { brand, pictures, flavorChartUrl } = item.brandSummary;
   const pictureUrl: string = pictures.length === 0 ? '' : pictures[0].url;
