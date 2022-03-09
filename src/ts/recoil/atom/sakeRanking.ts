@@ -1,9 +1,5 @@
 import { atom } from 'recoil';
-import {
-  RankingItem,
-  ResponsiveItem,
-  SakeRanking
-} from '@/ts/interfaces';
+import { RankingItem, ResponsiveItem, SakeRanking } from '@/ts/interfaces';
 
 const AtomKeys = {
   SAKE_RANKING_STATE: 'sakeRankingState',
