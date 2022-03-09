@@ -2,8 +2,8 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import { Header } from '@/components/organisms/responsiveDrawer/AppBar';
-import { constant } from '@/ts/modules/config';
-import { Props } from '@/ts/modules/interfaces';
+import { constant } from '@/ts/config';
+import { Props } from '@/ts/interfaces';
 import { SideBar } from '../organisms/responsiveDrawer/SideBar';
 
 export const ResponsiveDrawer = (props: Props) => {

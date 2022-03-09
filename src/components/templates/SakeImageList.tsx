@@ -6,12 +6,12 @@ import {
   FavoriteItem,
   RankingItem,
   SakeRanking
-} from '@/ts/modules/interfaces';
+} from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
-import { config } from '@/ts/modules/config';
+import { config } from '@/ts/config';
 
 export const SakeImageList = () => {
   const { columns, listItemWidth } = useResponsiveItem();

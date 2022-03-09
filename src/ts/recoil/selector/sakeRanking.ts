@@ -3,9 +3,9 @@ import {
   sakeRankingParamState,
   sakeRankingState
 } from '@/ts/recoil/atom/sakeRanking';
-import { SakeRanking } from '@/ts/modules/interfaces';
+import { SakeRanking } from '@/ts/interfaces';
 import { fetchAPI } from '@/ts/modules/fetchAPI';
-import { config } from '@/ts/modules/config';
+import { config } from '@/ts/config';
 
 export const sakeRankingSelector = selectorFamily({
   key: 'sakeRankingFetchAPI',

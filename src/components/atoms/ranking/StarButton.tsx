@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { RankingViewItem } from '@/ts/modules/interfaces';
+import { RankingViewItem } from '@/ts/interfaces';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useRecoilState } from 'recoil';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
 import { useLocation } from 'react-router-dom';
-import { config } from '@/ts/modules/config';
+import { config } from '@/ts/config';
 
 // お気に入りボタン
 export const StarButton = (props: { item: RankingViewItem }) => {

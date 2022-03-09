@@ -1,6 +1,6 @@
 import ImageListItem from '@mui/material/ImageListItem';
 import { SakeListItemBar } from '@/components/molecules/ranking/SakeListItemBar';
-import { RankingViewItem } from '@/ts/modules/interfaces';
+import { RankingViewItem } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 
 export const SakeListItem = (props: { item: RankingViewItem }) => {
