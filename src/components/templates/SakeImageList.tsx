@@ -2,11 +2,7 @@ import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/organisms/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
 import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
-import {
-  FavoriteItem,
-  RankingItem,
-  SakeRanking
-} from '@/ts/interfaces';
+import { FavoriteItem, RankingItem, SakeRanking } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
