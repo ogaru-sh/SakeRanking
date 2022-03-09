@@ -1,5 +1,5 @@
-import { config } from './config';
-import { FetchAPI } from './interfaces';
+import { config } from '../config';
+import { FetchAPI } from '../interfaces';
 
 const fetchAPI: FetchAPI = async (path: string, query: string) => {
   return await fetch(`${config.sakeAPI.baseURL}${path}?${query}`).then((resp) =>

@@ -3,7 +3,7 @@ import {
   RankingItem,
   ResponsiveItem,
   SakeRanking
-} from '@/ts/modules/interfaces';
+} from '@/ts/interfaces';
 
 const AtomKeys = {
   SAKE_RANKING_STATE: 'sakeRankingState',

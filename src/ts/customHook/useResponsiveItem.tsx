@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { constant } from '@/ts/modules/config';
+import { constant } from '@/ts/config';
 import { responsiveItemState } from '@/ts/recoil/atom/sakeRanking';
-import { ResponsiveItem } from '../modules/interfaces';
+import { ResponsiveItem } from '../interfaces';
 
 // 画面サイズによって日本酒ランキングリストのカラム数と画像サイズを動的に変更
 export const useResponsiveItem = () => {

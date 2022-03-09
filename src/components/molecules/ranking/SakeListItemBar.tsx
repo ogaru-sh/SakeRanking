@@ -1,5 +1,5 @@
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { RankingViewItem } from '@/ts/modules/interfaces';
+import { RankingViewItem } from '@/ts/interfaces';
 import { StarButton } from '../../atoms/ranking/StarButton';
 
 // 日本酒ランキングリストのアイテムに被せて表示するバナー

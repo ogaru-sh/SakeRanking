@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import { DefaultDrawer } from '@/components/molecules/responsiveDrawer/DefaultDrawer';
-import { constant } from '@/ts/modules/config';
-import { Props } from '@/ts/modules/interfaces';
+import { constant } from '@/ts/config';
+import { Props } from '@/ts/interfaces';
 
 export const SideBar = (props: { window?: Props['window'] }) => {
   const drawerWidth = constant.drawerWidth;
