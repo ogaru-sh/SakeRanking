@@ -8,8 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { config } from '@/ts/config';
 
 // お気に入りボタン
-export const StarButton = (props: { item: RankingViewItem }) => {
-  const { item } = props;
+export const StarButton: React.FC<{ item: RankingViewItem }> = ({ item }) => {
   const { brand } = item.brandSummary;
   const [sakeFavoriteList, setSakeFavoriteList] = useRecoilState(
     sakeFavoriteListState

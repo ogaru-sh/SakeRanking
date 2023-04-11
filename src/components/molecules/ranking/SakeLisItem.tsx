@@ -5,8 +5,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { StarButton } from '@/components/molecules/ranking/StarButton';
 
 // 日本酒ランキングリストのアイテムに被せて表示するバナー
-const SakeListItemBar = (props: { item: RankingViewItem }) => {
-  const { item } = props;
+const SakeListItemBar: React.FC<{ item: RankingViewItem }> = ({ item }) => {
   const { brand } = item.brandSummary;
   return (
     <ImageListItemBar
@@ -24,8 +23,7 @@ const SakeListItemBar = (props: { item: RankingViewItem }) => {
   );
 };
 
-export const SakeListItem = (props: { item: RankingViewItem }) => {
-  const { item } = props;
+export const SakeListItem: React.FC<{ item: RankingViewItem }> = ({ item }) => {
   const { brand, pictures, flavorChartUrl } = item.brandSummary;
   const pictureUrl: string = pictures.length === 0 ? '' : pictures[0].url;
   const style = {

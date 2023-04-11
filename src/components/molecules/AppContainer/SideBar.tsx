@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import { constant } from '@/ts/config';
@@ -23,9 +23,8 @@ const DefaultDrawer = () => {
   );
 };
 
-export const SideBar = (props: { window?: Props['window'] }) => {
+export const SideBar: React.FC<{ window?: Props['window'] }> = ({ window }) => {
   const drawerWidth = constant.drawerWidth;
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {

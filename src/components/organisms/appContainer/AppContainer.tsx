@@ -6,9 +6,8 @@ import { constant } from '@/ts/config';
 import { Props } from '@/ts/interfaces';
 import { SideBar } from '../../molecules/AppContainer/SideBar';
 
-export const AppContainer = (props: Props) => {
+export const AppContainer: React.FC<Props> = ({ window, children }) => {
   const drawerWidth = constant.drawerWidth;
-  const { window, children } = props;
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
