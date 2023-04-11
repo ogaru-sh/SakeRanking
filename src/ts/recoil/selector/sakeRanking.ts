@@ -12,8 +12,8 @@ export const fetchSakeRankingSelector = selectorFamily({
   get:
     (param: string) =>
     async ({ get }) => {
-      const sakeRanking = get(sakeRankingState);
-      const sakeRankingParam = get(sakeRankingParamState);
+      const sakeRanking = get<SakeRankingProps | null>(sakeRankingState);
+      const sakeRankingParam = get<string[]>(sakeRankingParamState);
       const sakeParam: string =
         sakeRankingParam.length === 0 ? '' : sakeRankingParam.join('&');
       if (sakeRanking && param === sakeParam) {

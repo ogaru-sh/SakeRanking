@@ -18,7 +18,7 @@ export const sakeFavoriteListState = atom<RankingItem[] | []>({
   default: []
 });
 
-export const sakeRankingParamState = atom<String[]>({
+export const sakeRankingParamState = atom<string[]>({
   key: AtomKeys.SAKE_RANKING_PARAM_STATE,
   default: []
 });
