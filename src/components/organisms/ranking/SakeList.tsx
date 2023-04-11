@@ -21,7 +21,7 @@ export const SakeList: React.FC = () => {
   const sakeRankingResult = useRecoilValue<SakeRankingProps | null>(
     sakeRankingSelector('')
   );
-  const favoriteList = useRecoilValue(sakeFavoriteListState);
+  const favoriteList = useRecoilValue<RankingItem[]>(sakeFavoriteListState);
   return (
     <ImageList
       css={style.imageList}
