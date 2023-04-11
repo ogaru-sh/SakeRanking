@@ -25,8 +25,8 @@ export const sakeRankingSelector = selectorFamily({
             param
           );
           return response;
-        } catch (error: any) {
-          throw new Error(error);
+        } catch (error: unknown) {
+          throw new Error(error as string);
         }
       }
     }

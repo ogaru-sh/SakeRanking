@@ -3,13 +3,14 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import React from 'react';
+import { SvgIconComponent } from '@mui/icons-material';
 
-export const SideBarItem = (props: {
+export const SideBarItem: React.FC<{
   title: string;
   path: string;
-  Icon: any;
-}) => {
-  const { title, path, Icon } = props;
+  Icon: SvgIconComponent;
+}> = ({ title, path, Icon }) => {
   const navigate = useNavigate();
   return (
     <List>
