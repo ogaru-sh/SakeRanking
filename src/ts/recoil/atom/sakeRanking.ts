@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { RankingItem, ResponsiveItem, SakeRanking } from '@/ts/interfaces';
+import { RankingItem, ResponsiveItem, SakeRankingProps } from '@/ts/interfaces';
 
 const AtomKeys = {
   SAKE_RANKING_STATE: 'sakeRankingState',
@@ -8,7 +8,7 @@ const AtomKeys = {
   SAKE_FAVORITE_LIST_STATE: 'sakeFavoriteListState'
 } as const;
 
-export const sakeRankingState = atom<SakeRanking | null>({
+export const sakeRankingState = atom<SakeRankingProps | null>({
   key: AtomKeys.SAKE_RANKING_STATE,
   default: null
 });
