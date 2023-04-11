@@ -15,7 +15,7 @@ export const Header = () => {
     >
       <Toolbar>
         <Typography variant="h6" noWrap component="div">
-          【2022 2月】日本酒ランキング
+          日本酒ランキング
         </Typography>
       </Toolbar>
     </AppBar>
