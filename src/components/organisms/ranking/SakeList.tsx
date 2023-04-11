@@ -40,7 +40,7 @@ export const SakeList: React.FC = () => {
       {/* 日本酒ランキングAPIからデータを取得し、ランキングを表示
           お気に入り画面の場合はお気に入りリストを表示 */}
       {displayList.map((item: RankingItem, index: number) => (
-        <SakeListItem item={item} key={index} />
+        <SakeListItem item={{ ...item, id: index }} key={index} />
       ))}
     </ImageList>
   );
