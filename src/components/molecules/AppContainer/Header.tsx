@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { constant } from '@/ts/config';
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const drawerWidth = constant.drawerWidth;
   return (
     <AppBar

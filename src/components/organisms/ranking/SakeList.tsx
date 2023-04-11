@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
 import { config } from '@/ts/config';
 
-export const SakeList = () => {
+export const SakeList: React.FC = () => {
   const { columns, listItemWidth } = useResponsiveItem();
   const { root, favorite } = config.pagePath;
   const location = useLocation();
