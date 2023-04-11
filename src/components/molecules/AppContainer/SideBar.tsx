@@ -5,7 +5,7 @@ import { constant } from '@/ts/config';
 import { Props } from '@/ts/interfaces';
 import Divider from '@mui/material/Divider';
 import Toolbar from '@mui/material/Toolbar';
-import { SideBarItem } from '@/components/atoms/responsiveDrawer/SideBarItem';
+import { SideBarItem } from '@/components/atoms/AppContainer/SideBarItem';
 import { config } from '@/ts/config';
 import HomeIcon from '@mui/icons-material/Home';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
