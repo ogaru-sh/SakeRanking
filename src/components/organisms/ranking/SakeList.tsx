@@ -22,6 +22,14 @@ export const SakeList: React.FC = () => {
     sakeRankingSelector('')
   );
   const favoriteList = useRecoilValue<RankingItem[]>(sakeFavoriteListState);
+
+  const displayList: RankingItem[] =
+    sakeRankingResult !== null && location.pathname === root
+      ? sakeRankingResult.ranking
+      : location.pathname === favorite
+      ? favoriteList
+      : [];
+
   return (
     <ImageList
       css={style.imageList}
@@ -31,15 +39,9 @@ export const SakeList: React.FC = () => {
     >
       {/* 日本酒ランキングAPIからデータを取得し、ランキングを表示
           お気に入り画面の場合はお気に入りリストを表示 */}
-      {sakeRankingResult !== null && location.pathname === root
-        ? sakeRankingResult.ranking.map((item: RankingItem, index: number) => (
-            <SakeListItem item={{ ...item, id: index }} key={index} />
-          ))
-        : location.pathname === favorite
-        ? favoriteList.map((item: FavoriteItem, index: number) => (
-            <SakeListItem item={item} key={index} />
-          ))
-        : ''}
+      {displayList.map((item: RankingItem, index: number) => (
+        <SakeListItem item={item} key={index} />
+      ))}
     </ImageList>
   );
 };
