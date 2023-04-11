@@ -1,8 +1,8 @@
 import ImageList from '@mui/material/ImageList';
 import { SakeListItem } from '@/components/molecules/ranking/SakeLisItem';
 import { useRecoilValue } from 'recoil';
-import { sakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
-import { FavoriteItem, RankingItem, SakeRankingProps } from '@/ts/interfaces';
+import { fetchSakeRankingSelector } from '@/ts/recoil/selector/sakeRanking';
+import { RankingItem, SakeRankingProps } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
@@ -19,7 +19,7 @@ export const SakeList: React.FC = () => {
     `
   };
   const sakeRankingResult = useRecoilValue<SakeRankingProps | null>(
-    sakeRankingSelector('')
+    fetchSakeRankingSelector('')
   );
   const favoriteList = useRecoilValue<RankingItem[]>(sakeFavoriteListState);
 

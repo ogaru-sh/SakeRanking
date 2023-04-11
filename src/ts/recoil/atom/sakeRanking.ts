@@ -4,7 +4,7 @@ import { RankingItem, ResponsiveItem, SakeRankingProps } from '@/ts/interfaces';
 const AtomKeys = {
   SAKE_RANKING_STATE: 'sakeRankingState',
   SAKE_RANKING_PARAM_STATE: 'sakeRankingParamState',
-  RESPONSIVE_ITEM_STATE: 'responsiveItem',
+  RESPONSIVE_ITEM_STATE: 'responsiveItemState',
   SAKE_FAVORITE_LIST_STATE: 'sakeFavoriteListState'
 } as const;
 

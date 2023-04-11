@@ -7,8 +7,8 @@ import { SakeRankingProps } from '@/ts/interfaces';
 import { fetchAPI } from '@/ts/modules/fetchAPI';
 import { config } from '@/ts/config';
 
-export const sakeRankingSelector = selectorFamily({
-  key: 'sakeRankingFetchAPI',
+export const fetchSakeRankingSelector = selectorFamily({
+  key: 'fetchSakeRanking',
   get:
     (param: string) =>
     async ({ get }) => {
