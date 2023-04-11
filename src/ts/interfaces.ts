@@ -190,7 +190,7 @@ export interface RankingItem {
   };
 }
 
-export interface SakeRanking {
+export interface SakeRankingProps {
   ranking: RankingItem[];
   pagination: {
     more: boolean;
@@ -205,7 +205,7 @@ export interface RankingViewItem extends RankingItem {
 export type FavoriteItem = RankingViewItem;
 
 // APIが増えた場合、FetchApiResultに追記
-export type FetchApiResult = SakeRanking;
+export type FetchApiResult = SakeRankingProps;
 
 export type FetchAPI = (
   path: string,

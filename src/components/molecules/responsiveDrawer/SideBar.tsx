@@ -1,9 +1,25 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { DefaultDrawer } from '@/components/molecules/responsiveDrawer/DefaultDrawer';
 import { constant } from '@/ts/config';
 import { Props } from '@/ts/interfaces';
+import Divider from '@mui/material/Divider';
+import Toolbar from '@mui/material/Toolbar';
+import { SideBarItem } from '@/components/atoms/responsiveDrawer/SideBarItem';
+import { config } from '@/ts/config';
+
+const DefaultDrawer = () => {
+  const { root, favorite } = config.pagePath;
+  return (
+    <div>
+      <Toolbar />
+      <Divider />
+      <SideBarItem title={'ランキング'} path={root} />
+      <Divider />
+      <SideBarItem title={'お気に入り'} path={favorite} />
+    </div>
+  );
+};
 
 export const SideBar = (props: { window?: Props['window'] }) => {
   const drawerWidth = constant.drawerWidth;

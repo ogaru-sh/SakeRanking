@@ -1,6 +1,6 @@
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { RankingViewItem } from '@/ts/interfaces';
-import { StarButton } from '../../atoms/ranking/StarButton';
+import { StarButton } from '../../molecules/ranking/StarButton';
 
 // 日本酒ランキングリストのアイテムに被せて表示するバナー
 export const SakeListItemBar = (props: { item: RankingViewItem }) => {

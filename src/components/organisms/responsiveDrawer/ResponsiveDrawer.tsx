@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
-import { Header } from '@/components/organisms/responsiveDrawer/AppBar';
+import { Header } from '@/components/molecules/responsiveDrawer/Header';
 import { constant } from '@/ts/config';
 import { Props } from '@/ts/interfaces';
-import { SideBar } from '../organisms/responsiveDrawer/SideBar';
+import { SideBar } from '../../molecules/responsiveDrawer/SideBar';
 
 export const ResponsiveDrawer = (props: Props) => {
   const drawerWidth = constant.drawerWidth;
