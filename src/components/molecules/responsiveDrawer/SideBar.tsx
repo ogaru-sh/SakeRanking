@@ -7,6 +7,8 @@ import Divider from '@mui/material/Divider';
 import Toolbar from '@mui/material/Toolbar';
 import { SideBarItem } from '@/components/atoms/responsiveDrawer/SideBarItem';
 import { config } from '@/ts/config';
+import HomeIcon from '@mui/icons-material/Home';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 const DefaultDrawer = () => {
   const { root, favorite } = config.pagePath;
@@ -14,9 +16,9 @@ const DefaultDrawer = () => {
     <div>
       <Toolbar />
       <Divider />
-      <SideBarItem title={'ランキング'} path={root} />
+      <SideBarItem title={'ランキング'} path={root} Icon={HomeIcon} />
       <Divider />
-      <SideBarItem title={'お気に入り'} path={favorite} />
+      <SideBarItem title={'お気に入り'} path={favorite} Icon={StarBorderIcon} />
     </div>
   );
 };

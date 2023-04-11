@@ -2,8 +2,8 @@ import { describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
-import { SakeImageList } from '@/components/templates/SakeImageList';
-import { ResponsiveDrawer } from '@/components/templates/ResponsiveDrawer';
+import { SakeList } from '@/components/organisms/ranking/SakeList';
+import { ResponsiveDrawer } from '@/components/organisms/responsiveDrawer/ResponsiveDrawer';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 describe('hole component', () => {
@@ -13,7 +13,7 @@ describe('hole component', () => {
         <Router>
           <ResponsiveDrawer>
             <Suspense fallback={<div>Loading...</div>}>
-              <SakeImageList />
+              <SakeList />
             </Suspense>
           </ResponsiveDrawer>
         </Router>
