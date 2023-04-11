@@ -33,11 +33,11 @@ export const StarButton: React.FC<{ item: RankingViewItem }> = ({ item }) => {
         if (isFavorite) {
           // クリックした日本酒がお気に入りリストに入っていれば
           // それ以外を返却し新しいリストを作成
-          const copyList = sakeFavoriteList.filter((val) => {
+          const filteredFavoriteList = sakeFavoriteList.filter((val) => {
             return val.id !== item.id;
           });
           setFavorite(false);
-          setSakeFavoriteList(copyList);
+          setSakeFavoriteList(filteredFavoriteList);
         } else {
           setFavorite(true);
           setSakeFavoriteList([...sakeFavoriteList, item]);
