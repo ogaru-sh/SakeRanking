@@ -18,7 +18,7 @@ export const SakeList: React.FC = () => {
       margin: 0 auto;
     `
   };
-  const sakeRankingResult: SakeRankingProps | null = useRecoilValue(
+  const sakeRankingResult = useRecoilValue<SakeRankingProps | null>(
     sakeRankingSelector('')
   );
   const favoriteList = useRecoilValue(sakeFavoriteListState);
