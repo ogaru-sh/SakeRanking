@@ -3,7 +3,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import React from 'react';
 import { SvgIconComponent } from '@mui/icons-material';
 
 export const SideBarItem: React.FC<{
