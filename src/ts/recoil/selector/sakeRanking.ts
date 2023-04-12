@@ -8,7 +8,7 @@ import { fetchAPI } from '@/ts/modules/fetchAPI';
 import { config } from '@/ts/config';
 
 export const fetchSakeRankingSelector = selectorFamily({
-  key: 'fetchSakeRanking',
+  key: 'fetchSakeRankingSelector',
   get:
     (param: string) =>
     async ({ get }) => {
@@ -20,7 +20,7 @@ export const fetchSakeRankingSelector = selectorFamily({
         return sakeRanking;
       } else {
         try {
-          const response: Promise<SakeRankingProps | null> = fetchAPI(
+          const response: SakeRankingProps | null = await fetchAPI(
             config.sakeAPI.basePath.ranking,
             param
           );

@@ -6,8 +6,8 @@ import { RankingItem, SakeRankingProps } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import { useResponsiveItem } from '@/ts/customHook/useResponsiveItem';
 import { useLocation } from 'react-router-dom';
-import { sakeFavoriteListState } from '@/ts/recoil/atom/sakeRanking';
 import { config } from '@/ts/config';
+import { sakeFavoriteSelector } from '@/ts/recoil/selector/sakeFavorite';
 
 export const SakeList: React.FC = () => {
   const { columns, listItemWidth } = useResponsiveItem();
@@ -21,13 +21,13 @@ export const SakeList: React.FC = () => {
   const sakeRankingResult = useRecoilValue<SakeRankingProps | null>(
     fetchSakeRankingSelector('')
   );
-  const favoriteList = useRecoilValue<RankingItem[]>(sakeFavoriteListState);
+  const sakeFavoriteList = useRecoilValue(sakeFavoriteSelector);
 
   const displayList: RankingItem[] =
     sakeRankingResult !== null && location.pathname === root
       ? sakeRankingResult.ranking
       : location.pathname === favorite
-      ? favoriteList
+      ? sakeFavoriteList
       : [];
 
   return (
@@ -40,7 +40,7 @@ export const SakeList: React.FC = () => {
       {/* 日本酒ランキングAPIからデータを取得し、ランキングを表示
           お気に入り画面の場合はお気に入りリストを表示 */}
       {displayList.map((item: RankingItem, index: number) => (
-        <SakeListItem item={{ ...item, id: index }} key={index} />
+        <SakeListItem item={item} key={index} />
       ))}
     </ImageList>
   );
