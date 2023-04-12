@@ -43,7 +43,7 @@ export const SakeListItem: React.FC<{ item: RankingViewItem }> = ({ item }) => {
   return (
     // 日本酒のイメージとフレーバーのレーダーチャートを並べて表示
     <ImageListItem key={flavorChartUrl}>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item>
           <Box
             component="img"
