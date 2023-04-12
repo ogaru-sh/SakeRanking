@@ -13,13 +13,13 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 const DefaultDrawer = () => {
   const { root, favorite } = config.pagePath;
   return (
-    <div>
+    <Box>
       <Toolbar />
       <Divider />
       <SideBarItem title={'ランキング'} path={root} Icon={HomeIcon} />
       <Divider />
       <SideBarItem title={'お気に入り'} path={favorite} Icon={StarBorderIcon} />
-    </div>
+    </Box>
   );
 };
 
