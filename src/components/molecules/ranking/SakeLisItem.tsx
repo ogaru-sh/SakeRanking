@@ -3,7 +3,14 @@ import { RankingViewItem } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { StarButton } from '@/components/molecules/ranking/StarButton';
-import { Box, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow
+} from '@mui/material';
 
 // 日本酒ランキングリストのアイテムに被せて表示するバナー
 const SakeListItemBar: React.FC<{ item: RankingViewItem }> = ({ item }) => {
@@ -36,30 +43,26 @@ export const SakeListItem: React.FC<{ item: RankingViewItem }> = ({ item }) => {
   return (
     // 日本酒のイメージとフレーバーのレーダーチャートを並べて表示
     <ImageListItem key={flavorChartUrl}>
-      <Table>
-        <TableBody>
-          <TableRow>
-            <TableCell>
-              <Box
-                component="img"
-                css={style.image}
-                src={pictureUrl}
-                alt={brand.name}
-                loading="lazy"
-              />
-            </TableCell>
-            <TableCell>
-              <Box
-                component="img"
-                css={style.image}
-                src={flavorChartUrl}
-                alt={brand.name}
-                loading="lazy"
-              />
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+      <Grid container>
+        <Grid item>
+          <Box
+            component="img"
+            css={style.image}
+            src={pictureUrl}
+            alt={brand.name}
+            loading="lazy"
+          />
+        </Grid>
+        <Grid item>
+          <Box
+            component="img"
+            css={style.image}
+            src={flavorChartUrl}
+            alt={brand.name}
+            loading="lazy"
+          />
+        </Grid>
+      </Grid>
       <SakeListItemBar item={item} />
     </ImageListItem>
   );
