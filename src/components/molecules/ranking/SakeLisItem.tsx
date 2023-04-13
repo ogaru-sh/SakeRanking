@@ -2,7 +2,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { RankingViewItem } from '@/ts/interfaces';
 import { css } from '@emotion/react';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import { StarButton } from '@/components/molecules/ranking/StarButton';
+import { FavoriteButton } from '@/components/molecules/ranking/FavoriteButton';
 import {
   Box,
   Grid,
@@ -25,7 +25,7 @@ const SakeListItemBar: React.FC<{ item: RankingViewItem }> = ({ item }) => {
       title={brand.name}
       subtitle={brand.brewery.name}
       position="top"
-      actionIcon={<StarButton item={item} />}
+      actionIcon={<FavoriteButton item={item} />}
       actionPosition="left"
     />
   );

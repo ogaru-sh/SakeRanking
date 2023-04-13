@@ -6,7 +6,9 @@ import { useRecoilState } from 'recoil';
 import { sakeFavoriteSelector } from '@/ts/recoil/selector/sakeFavorite';
 
 // お気に入りボタン
-export const StarButton: React.FC<{ item: RankingViewItem }> = ({ item }) => {
+export const FavoriteButton: React.FC<{ item: RankingViewItem }> = ({
+  item
+}) => {
   const [sakeFavoriteList, setSakeFavoriteList] =
     useRecoilState(sakeFavoriteSelector);
 
