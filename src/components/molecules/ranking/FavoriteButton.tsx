@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RankingViewItem } from '@/ts/interfaces';
+import { RankingItem, RankingViewItem } from '@/ts/interfaces';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { useRecoilState } from 'recoil';
@@ -10,7 +10,7 @@ export const FavoriteButton: React.FC<{ item: RankingViewItem }> = ({
   item
 }) => {
   const [sakeFavoriteList, setSakeFavoriteList] =
-    useRecoilState(sakeFavoriteSelector);
+    useRecoilState<RankingItem[]>(sakeFavoriteSelector);
 
   const isFavoriteItem = sakeFavoriteList.some((val) => val.rank === item.rank);
 
