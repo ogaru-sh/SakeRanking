@@ -16,14 +16,13 @@ export default defineConfig({
         'Content-Type': 'application/json'
       },
       rewrite: (path) => path.replace(/^\/api\/ranking/, '/api/v2/brands/ranking')
-    }
-  }
+    }}
   },
-  base: './',
-  root: './src/',
-  build: {
-    outDir: '../public',
-    emptyOutDir: true,
+    base: './',
+    root: './src/',
+    build: {
+      outDir: '../public',
+      emptyOutDir: true,
   },
   resolve: {
     alias: {
