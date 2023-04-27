@@ -1,11 +1,8 @@
 import { Config, Constant } from './interfaces';
 
-const isProduction = process.env.NODE_ENV === 'production';
 export const config: Config = {
   sakeAPI: {
-    baseURL: isProduction
-      ? 'https://sakeranking.web.app/'
-      : 'http://localhost:3000',
+    baseURL: 'http://localhost:3000',
     basePath: {
       ranking: '/api/ranking'
     }
