@@ -29,13 +29,6 @@
 
 `npm run dev`
 
-### Demo
-
-- firebase
-  - https://sakeranking.web.app
-  - さけのわ API へアクセスする際に、現状はローカルから接続のみ可能
-  - Demo を確認する際は `npm run dev` を実行したあと確認可能
-
 ### Function
 
 - タブ
